@@ -90,7 +90,6 @@ const PriceChart = ({ uuid, choosenCompany }) => {
         setAdditionalCampaign([...additionalCampaign, choosenCompany.select]);
         break;
       case changesTypes.remove:
-        console.log(choosenCompany, "choosenCompany.select");
         ws.current.send(
           JSON.stringify({
             pk: choosenCompany.remove.id,

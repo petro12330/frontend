@@ -16,14 +16,14 @@ const CompanyPage = () => {
   const [choosenCompany, setChoosenCompany] = useState([]);
 
   useEffect(() => {
-    const a = async () => {
+    const getCompanyList = async () => {
       let res = await companyServise.getCompanyList();
       res = res.filter(el => el.id !== uuid);
       setCompanyOptions(
         res.map(el => ({ ...el, value: el.id, label: el.name }))
       );
     };
-    a();
+    getCompanyList();
   }, [setCompanyOptions]);
   const handleChange = (value, actionMeta) => {
     let changes = {};

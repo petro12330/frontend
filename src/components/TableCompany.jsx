@@ -5,7 +5,6 @@ import companyServise from "../services/companyServise";
 const TableCompany = () => {
   const [compnayList, setCompnayList] = useState([]);
   useEffect(() => {
-    console.log(compnayList);
     if (!!compnayList) {
       companyServise.getCompanyList().then(data => setCompnayList(data));
     }
